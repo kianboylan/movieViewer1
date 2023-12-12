@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MovieViewer1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      <div>Signed in as...
+        <%= current_user.email %>
+        <%= link_to 'Movie Reviews', movies_url, :method => :get%>
+        (<%= link_to 'Sign out', destroy_user_session_path, :method => :get%>)
+
+      </div>
+    <% else %>
+      <%= link_to 'Register', new_user_registration_path %> or
+      <%= link_to 'Sign In', new_user_session_path %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
