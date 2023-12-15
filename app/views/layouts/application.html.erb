@@ -6,6 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
+    
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -14,12 +16,15 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <% if user_signed_in? %>
-      <div>Signed in as...
-        <%= current_user.email %>
-        <%= link_to 'Movie Reviews', movies_url, :method => :get%>
-        (<%= link_to 'Sign out', destroy_user_session_path, :method => :get%>)
-
+    <div>
+      <nav class="navbar">
+        <div class="container">
+            <div>Signed in as...
+            <%= current_user.email %>
+            <%= link_to 'Movie Reviews', movies_url, :method => :get%>
+            (<%= link_to 'Sign out', destroy_user_session_path, :method => :get%>)
       </div>
+    </div>
     <% else %>
       <%= link_to 'Register', new_user_registration_path %> or
       <%= link_to 'Sign In', new_user_session_path %>
