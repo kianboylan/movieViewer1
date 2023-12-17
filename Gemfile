@@ -54,10 +54,10 @@ group :development, :test do
   gem 'bundler-audit'
   gem 'debug', platforms: %i[mri windows]
   gem 'pg'
+  gem 'rack-cors', require: 'rack/cors'
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'ruby_audit'
-  gem 'rack-cors', require: 'rack/cors'
 end
 
 group :development do

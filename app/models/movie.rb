@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Movie < ApplicationRecord
+class Movie < ApplicationRecord # rubocop:todo Style/Documentation
   belongs_to :user
   validates :title, presence: true
   validates :genre, presence: true

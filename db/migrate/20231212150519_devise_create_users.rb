@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class DeviseCreateUsers < ActiveRecord::Migration[7.1]
+class DeviseCreateUsers < ActiveRecord::Migration[7.1] # rubocop:todo Style/Documentation
   def change
     create_table :users do |t|
       ## Database authenticatable

@@ -21,7 +21,9 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Movie.count') do
       post movies_url,
            params: { movie: { description: @movie.description, director: @movie.director, genre: @movie.genre,
+                              # rubocop:todo Layout/LineLength
                               production_company: @movie.production_company, release_date: @movie.release_date, review: @movie.review, run_time: @movie.run_time, title: @movie.title, user_id: @movie.user_id } }
+      # rubocop:enable Layout/LineLength
     end
 
     assert_redirected_to movie_url(Movie.last)
@@ -40,7 +42,9 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
   test 'should update movie' do
     patch movie_url(@movie),
           params: { movie: { description: @movie.description, director: @movie.director, genre: @movie.genre,
+                             # rubocop:todo Layout/LineLength
                              production_company: @movie.production_company, release_date: @movie.release_date, review: @movie.review, run_time: @movie.run_time, title: @movie.title, user_id: @movie.user_id } }
+    # rubocop:enable Layout/LineLength
     assert_redirected_to movie_url(@movie)
   end
 

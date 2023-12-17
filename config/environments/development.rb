@@ -2,7 +2,7 @@
 
 require 'active_support/core_ext/integer/time'
 
-Rails.application.configure do
+Rails.application.configure do # rubocop:todo Metrics/BlockLength
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -10,6 +10,9 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.enable_reloading = true
   config.hosts.clear
+
+  config.hosts << 'localhost'
+  config.hosts << 'https://ec2-34-201-103-225.compute-1.amazonaws.com/'
 
   # Do not eager load code on boot.
   config.eager_load = false

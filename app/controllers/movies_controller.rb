@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class MoviesController < ApplicationController
+class MoviesController < ApplicationController # rubocop:todo Style/Documentation
   before_action :authenticate_user!
   before_action :set_movie, only: %i[show edit update destroy]
 
@@ -41,7 +41,7 @@ class MoviesController < ApplicationController
   end
 
   # POST /movies or /movies.json
-  def create
+  def create # rubocop:todo Metrics/AbcSize, Metrics/MethodLength
     @movie = Movie.new(movie_params)
     if @movie.user_id != current_user.id
       redirect_to movies_url
@@ -60,7 +60,7 @@ class MoviesController < ApplicationController
   end
 
   # PATCH/PUT /movies/1 or /movies/1.json
-  def update
+  def update # rubocop:todo Metrics/AbcSize, Metrics/MethodLength
     if @movie.user_id != current_user.id
       redirect_to movies_url
       return
