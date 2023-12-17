@@ -11,9 +11,7 @@ Rails.application.configure do # rubocop:todo Metrics/BlockLength
   config.enable_reloading = true
   config.hosts.clear
 
-  config.hosts << 'localhost'
-  config.hosts << 'https://ec2-34-201-103-225.compute-1.amazonaws.com/'
-
+  config.hosts << '127.0.0.1:3000'
   # Do not eager load code on boot.
   config.eager_load = false
 
