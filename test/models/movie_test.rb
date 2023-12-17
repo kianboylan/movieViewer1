@@ -3,7 +3,8 @@
 require 'test_helper'
 
 class MovieTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "Save Movie Review" do
+    user = users(:one)
+    assert user.save
+  end
 end

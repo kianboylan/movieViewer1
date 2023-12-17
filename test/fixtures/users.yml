@@ -4,8 +4,14 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
+one:
+  email: user@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  reset_password_token: null
+  reset_password_sent_at: null
+  remember_created_at: null
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
 #
-two: {}
-# column: value
+#two: {}
+#column: value
