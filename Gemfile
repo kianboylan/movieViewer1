@@ -15,7 +15,7 @@ gem 'rails', '~> 7.1.2'
 gem 'sprockets-rails'
 
 gem 'sqlite3', group: :development
-gem 'pg', '0.18.1', group: :production
+gem 'pg', '1.1.4', group: :production
 gem 'rails_12factor', group: :production
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -56,7 +56,6 @@ group :development, :test do
   gem 'brakeman'
   gem 'bundler-audit'
   gem 'debug', platforms: %i[mri windows]
-  gem 'pg'
   gem 'rack-cors', require: 'rack/cors'
   gem 'rubocop'
   gem 'rubocop-rails'
